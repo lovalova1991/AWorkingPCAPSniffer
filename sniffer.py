@@ -7,7 +7,7 @@ def sniffer(out_lck, timeout, port, interface):
     output(out_lck, "Analizer")
     output(out_lck, "Starting TCPDUMP...\n")
 
-    os.system("timeout " + timeout + " tcpdump -s 0 \"port " + port + "\" -i " + interface + " -w captured.pcap")
+    os.system("timeout " + str(timeout) + " tcpdump -s 0 \"port " + str(port) + "\" -i " + interface + " -w captured.pcap")
 
     pack = rdpcap('captured.pcap')
     file = open("output/sniffed.jpeg", "wb")
@@ -24,4 +24,4 @@ def sniffer(out_lck, timeout, port, interface):
 
     else:
         print("Nothing captured..\nExiting....")
-        exit(4)
+        exit(5)

@@ -13,6 +13,7 @@ if __name__ == "__main__":
     host = "127.0.0.1"
     port = 3000
     interface = "lo"
+    extension = "jpg"
 
     while True:
         # Main Menu
@@ -34,9 +35,9 @@ if __name__ == "__main__":
             option = loop_menu(out_lck, "Select an option: ", ["TCP",
                                                                "UDP"])
             if option == 1:
-                TCPserver(out_lck, host, port)
+                TCPserver(out_lck, host, port, extension)
             elif option == 2:
-                UDPserver(out_lck, host, port)
+                UDPserver(out_lck, host, port, extension)
 
 
         elif main_menu == 3:
